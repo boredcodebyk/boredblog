@@ -1,2 +1,18 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+  import moment from 'moment';
+
+    let {data} = $props()
+</script>
+
+<h1>Hello There</h1>
+
+<p>my blog(s)</p>
+<div class="py-2">
+    {#if data.posts.length != 0}
+    {#each data.posts as post}
+    <p>[{moment(post.date).format('MMMM Do YYYY')}] | <a href={post.slug}>{post.title}</a></p>
+    {/each}
+    {:else}
+    <p>Come back later</p>
+{/if}
+</div>
