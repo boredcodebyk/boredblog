@@ -18,7 +18,7 @@
 		Published at {moment(data.metadata.date).format('MMMM Do YYYY')}</small>
 	</hgroup>
 
-	<div class="flex flex-row gap-2">
+	<div class="flex flex-row gap-2  pb-4">
 		{#each data.metadata.categories as category}
 			<small>&num;{category} </small>
 		{/each}
